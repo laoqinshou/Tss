@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 // import HelloWorld from '@/components/HelloWorld'
+// 创建的时候系统自带的vue页面显示
 import Home from '@/pages/home/home'
-import List from '@/pages/list/List'
 
 Vue.use(Router)
 
@@ -12,11 +12,6 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home
-    },
-    {
-      path: '/list',
-      name: 'List',
-      component: List
     }
   ]
 })
