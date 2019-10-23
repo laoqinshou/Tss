@@ -86,10 +86,6 @@ export default {
   width: 100%;
   height: 0;
   padding-bottom: 50%;
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/index-icons
   .child {
     position: relative;
     overflow: hidden;
@@ -97,10 +93,6 @@ export default {
     width: 25%;
     height: 0;
     padding-bottom: 25%;
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/index-icons
     .child-img {
       position: absolute;
       left: 0;
@@ -109,20 +101,14 @@ export default {
       padding-bottom: 0.4rem;
       box-sizing: border-box;
       padding: 0.1rem;
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/index-icons
       .imgself {
         display: block;
         margin: 0 auto;
         width: 70%;
       }
     }
-<<<<<<< HEAD
 
-=======
->>>>>>> origin/index-icons
     .child-font {
       position: absolute;
       left: 0;
@@ -137,8 +123,4 @@ export default {
     }
   }
 }
-<<<<<<< HEAD
 </style>
-=======
-</style>
->>>>>>> origin/index-icons
