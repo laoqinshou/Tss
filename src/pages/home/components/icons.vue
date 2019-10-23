@@ -21,47 +21,47 @@ export default {
         {
           id: '1',
           imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点1'
+          desc: '热门景点1热门景点1热门景点1热门景点1热门景点1'
         },
         {
           id: '2',
           imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点1'
+          desc: '热门景点2'
         },
         {
           id: '3',
           imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点1'
+          desc: '热门景点3'
         },
         {
           id: '4',
           imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点1'
+          desc: '热门景点4'
         },
         {
           id: '5',
           imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点1'
+          desc: '热门景点5'
         },
         {
           id: '6',
           imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点1'
+          desc: '热门景点6'
         },
         {
           id: '7',
           imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点1'
+          desc: '热门景点7'
         },
         {
           id: '8',
           imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点1'
+          desc: '热门景点8'
         },
         {
           id: '9',
           imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点1'
+          desc: '热门景点9'
         }]
     }
   },
@@ -70,7 +70,7 @@ export default {
       const pages = []
       this.swiperList.forEach((item, index) => {
         const page = Math.floor(index / 8)
-        if (!pages(page)) {
+        if (!pages[page]) {
           pages[page] = []
         }
         pages[page].push(item)
@@ -119,6 +119,9 @@ export default {
       height: 0.4rem;
       line-height: 0.4rem;
       text-align: center;
+      overflow hidden;
+      white-space nowrap;
+      text-overflow ellipsis;
     }
   }
 }
