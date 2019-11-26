@@ -1,10 +1,10 @@
 <template>
   <div class="icon">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="child" v-for="item of page" :key="item.id">
           <div class="child-img">
-            <img class="imgself" :src="item.imgurl" />
+            <img class="imgself" :src="item.imgUrl" />
           </div>
           <p class="child-font">{{item.desc}}</p>
         </div>
@@ -15,60 +15,13 @@
 <script>
 export default {
   name: 'icons',
-  data () {
-    return {
-      swiperList: [
-        {
-          id: '1',
-          imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点1热门景点1热门景点1热门景点1热门景点1'
-        },
-        {
-          id: '2',
-          imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点2'
-        },
-        {
-          id: '3',
-          imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点3'
-        },
-        {
-          id: '4',
-          imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点4'
-        },
-        {
-          id: '5',
-          imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点5'
-        },
-        {
-          id: '6',
-          imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点6'
-        },
-        {
-          id: '7',
-          imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点7'
-        },
-        {
-          id: '8',
-          imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点8'
-        },
-        {
-          id: '9',
-          imgurl: 'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-          desc: '热门景点9'
-        }]
-    }
+  props:{
+    list:Array
   },
   computed: {
     pages () {
       const pages = []
-      this.swiperList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
@@ -76,6 +29,13 @@ export default {
         pages[page].push(item)
       })
       return pages
+    }
+  },
+  data(){
+    return{
+      swiperOption:{
+        autoplay:false
+      }
     }
   }
 }

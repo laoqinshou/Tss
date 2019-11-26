@@ -1,10 +1,10 @@
 <template>
   <div class="wapper">
-    <swiper :options="swiperOption">
-      <swiper-slide v-for="items of swiperList" :key="items.id">
+    <swiper :options="swiperOption" v-if="showswiper">
+      <swiper-slide v-for="items of list" :key="items.id">
         <img
           class="swiper-img"
-          :src="items.imgurl"
+          :src="items.imgUrl"
         />
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
@@ -14,25 +14,21 @@
 <script>
 export default {
   name: 'HomeSwiper',
+  props:{
+    list:Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true
-      },
-      swiperList: [{
-        id: '1111',
-        imgurl: 'https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3081108087,555312235&fm=26&gp=0.jpg'
-      },
-      {
-        id: '222',
-        imgurl: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1392403833,353777295&fm=26&gp=0.jpg'
-      },
-      {
-        id: '333',
-        imgurl: 'https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=2939168414,2525881912&fm=26&gp=0.jpg'
-      }]
+      }
     }
+  },
+  computed:{
+   showswiper(){
+     return this.list.length
+   }
   }
 }
 </script>

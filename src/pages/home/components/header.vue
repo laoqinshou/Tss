@@ -8,14 +8,17 @@
         <span class="iconfont"></span>
       </div>
       <div class="header-right">
-        城市
+        {{this.city}}
         <span class="iconfont"> &#xe6aa;</span>
       </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'HomeHeaders'
+  name: 'HomeHeaders',
+  props:{
+    city:String
+  }
 }
 </script>
 <style scoped lang='stylus'>

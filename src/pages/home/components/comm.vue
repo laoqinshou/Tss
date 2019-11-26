@@ -2,8 +2,8 @@
     <div>
         <div class="c-title">热销推荐</div>
         <ul>
-            <li class="c-li border-bottom" v-for="item of commlist" :key="item.id">
-                <img class="c-img" :src="item.imgurl" alt="">
+            <li class="c-li border-bottom" v-for="item of list" :key="item.id">
+                <img class="c-img" :src="item.imgUrl" alt="">
                 <div class="c-bottom-title">
                     <p class="c-title-acticle">{{item.title}}</p>
                     <p class="c-acticle">{{item.desc}}</p>
@@ -16,29 +16,9 @@
 <script>
 export default {
   name: 'comm',
-  data () {
-      return{
-          commlist:[{
-              id:'1',
-              imgurl:'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-              title:'xsfsx',
-              desc:'cccccccccccccc'
-          },
-          {
-              id:'2',
-              imgurl:'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-              title:'xsfsx',
-              desc:'cccccccccccccc'
-          },
-          {
-              id:'3',
-              imgurl:'http://img0.imgtn.bdimg.com/it/u=2383721088,3169429672&fm=26&gp=0.jpg',
-              title:'xsfsx',
-              desc:'cccccccccccccc'
-          }
-          ]
-      }
-  }
+  props:{
+    list:Array
+ }
 }
 </script>
 <style lang="stylus" scoped>
