@@ -7,10 +7,12 @@
         城市/搜索/内容
         <span class="iconfont"></span>
       </div>
-      <div class="header-right">
-        {{this.city}}
-        <span class="iconfont"> &#xe6aa;</span>
-      </div>
+      <router-link to='/city'>
+        <div class="header-right">
+          {{this.city}}
+          <span class="iconfont"> &#xe6aa;</span>
+        </div>
+      </router-link>
   </div>
 </template>
 <script>
@@ -46,4 +48,5 @@ export default {
         width 1.24rem
         margin-top .2rem
         text-align: center
+        color #fff
 </style>
