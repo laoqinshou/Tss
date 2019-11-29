@@ -4,95 +4,23 @@
             <div class="area">
                 <div class="little border-topbottom" >您的位置</div>
                 <div class="city-choose">
-                    <div class="city-show">
-                        <div class="button">北京</div>
-                    </div>
-                    <div class="city-show">
-                        <div class="button">北京</div>
-                    </div>
-                    <div class="city-show">
-                        <div class="button">北京</div>
-                    </div>
-                    <div class="city-show">
-                        <div class="button">北京</div>
-                    </div>
-                    <div class="city-show">
-                        <div class="button">北京</div>
+                    <div class="city-show"  v-for="item of hot" :key="item.id">
+                        <div class="button">{{item.name}}</div>
                     </div>
                 </div>
             </div>
             <div class="area">
                 <div class="little border-topbottom">热门城市</div>
                 <div class="city-choose">
-                    <div class="city-show">
-                        <div class="button">北京</div>
-                    </div>
-                    <div class="city-show">
-                        <div class="button">北京</div>
-                    </div>
-                    <div class="city-show">
-                        <div class="button">北京</div>
-                    </div>
-                    <div class="city-show">
-                        <div class="button">北京</div>
-                    </div>
-                    <div class="city-show">
-                        <div class="button">北京</div>
+                    <div class="city-show" v-for="item of hot" :key="item.id">
+                        <div class="button">{{item.name}}</div>
                     </div>
                 </div>
             </div>
-            <div class="area">
-                <div class="little border-topbottom">A</div>
+            <div class="area" v-for="(items,key) of listcity" :key="key">
+                <div class="little border-topbottom">{{key}}</div>
                 <div class="name-list">
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                </div>
-            </div>
-            <div class="area">
-                <div class="little border-topbottom">A</div>
-                <div class="name-list">
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                </div>
-            </div>
-            <div class="area">
-                <div class="little border-topbottom">A</div>
-                <div class="name-list">
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                </div>
-            </div>
-            <div class="area">
-                <div class="little border-topbottom">A</div>
-                <div class="name-list">
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                </div>
-            </div>
-            <div class="area">
-                <div class="little border-topbottom">A</div>
-                <div class="name-list">
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                </div>
-            </div>
-            <div class="area">
-                <div class="little border-topbottom">A</div>
-                <div class="name-list">
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
-                    <div class="name border-bottom">ale</div>
+                    <div class="name border-bottom" v-for="itemhtml of items" :key="itemhtml.id">{{itemhtml.name}}</div>
                 </div>
             </div>
         </div>
@@ -104,6 +32,10 @@ export default {
     name:'Citylist',
     mounted (){
         this.scroll=new BScroll(this.$refs.wrapper)
+    },
+    props:{
+        hot:Array,
+        listcity:Object
     }
 }
 </script>

@@ -1,38 +1,16 @@
 <template>
     <div>
         <ul class="list">
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
-            <li>A</li>
+            <li  v-for="(item,key) of listcity" :key="key">{{key}}</li>
         </ul>
     </div>
 </template>
 <script>
 export default {
-    name:'arrlist'
+    name:'arrlist',
+    props:{
+        listcity:Object
+    }
     
 }
 </script>
